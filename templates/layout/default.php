@@ -14,7 +14,7 @@
  * @var \App\View\AppView $this
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'ClinicManagmentProject';
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,29 +29,80 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
-    <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?>
+    <!-- <?= $this->Html->css(['normalize.min', 'milligram.min', 'cake']) ?> -->
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+
+    <!-- Bootstrap -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="<?php echo $this->request->getAttribute('webroot');?>/build/css/custom.min.css" rel="stylesheet">
 </head>
-<body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="<?= $this->Url->build('/') ?>"><span>Cake</span>PHP</a>
+<body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <?php echo $this->element('sidebar');?>
+        <?php echo $this->element('top_bar');?>
+        <?php echo $this->element('content');?>
+        <?php echo $this->element('footer');?>
         </div>
-        <div class="top-nav-links">
-            <a target="_blank" rel="noopener" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" rel="noopener" href="https://api.cakephp.org/4/">API</a>
-        </div>
-    </nav>
-    <main class="main">
-        <div class="container">
-            <?= $this->Flash->render() ?>
-            <?= $this->fetch('content') ?>
-        </div>
-    </main>
-    <footer>
-    </footer>
-</body>
+    </div>
+    <!-- jQuery -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- gauge.js -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/iCheck/icheck.min.js"></script>
+    <!-- Skycons -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/Flot/jquery.flot.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/Flot/jquery.flot.time.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/DateJS/build/date.js"></script>
+    <!-- JQVMap -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/jqvmap/dist/jquery.vmap.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/moment/min/moment.min.js"></script>
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="<?php echo $this->request->getAttribute('webroot');?>/build/js/custom.min.js"></script>
+  </body>
 </html>
+
